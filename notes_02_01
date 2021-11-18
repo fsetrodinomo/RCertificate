@@ -1,3 +1,5 @@
+
+## Single vs Multiple files
 shiny app -> single file use shinyapp(snippet)
 
 Disadvantages single file app:
@@ -7,5 +9,45 @@ Disadvantages single file app:
 
 NOTE:
 - Single app are ONLY useful for small examples
-____________________________
-Split-file app
+
+ 
+
+## server.R
+- input and output arguments are mandatory
+- easier to include session by default than debug errors
+
+## ui.R
+- navbarPage() is a specific page layout; there are many others available
+- fluidPage() creates a single-page app
+- defines the user experience, client side of the app
+
+
+## server.R
+Structure:
+- Able to run code(only file which makes this possible)
+- Contains your data wrangling, modeling and data visualization code
+
+
+Include:
+- Input widgets
+- custom HTML/CSS/JS files
+- Packages including own HTML/JS must be loaded in server.R AND ui.R 
+e.g. HTML widgets
+
+CAN'T be done in ui.R
+- Charts,plots and other output cannot be created in the ui.R 
+  -> MUST be first rendered in the server.R 
+      file.
+- Directly access values from input widgets
+  -> Cross-dependency must be specified in 
+      the server.R file
+
+Input widgets:
+- Achieved by server-side with :
+    updateSelectInput()
+- Desirable to prevent users from seeing   
+  empty charts or tables throught 
+  Interdependent controls achieved by:
+    update*Input()
+
+

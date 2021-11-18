@@ -1,0 +1,22 @@
+## input$var vs. output$plot
+Input$var:
+  -Created by input widgets or controls
+  - Some HTMLwidgets also spawn input$click_etc variabls
+
+Output$plot
+  - Created @server.R to render content to be sent to the client server
+  
+
+## Getting the ui.R file right
+Never include 
+- input variables e.g input$var
+- naked output variables such as output$plot
+
+instead:
+Always quote the names of variables, preferably in double quotation marks-- e.g. ("plot")
+
+## Getting the server.R file right
+- Added new content to display to the output object with an assignment:
+    output$curve_plot <-
+- Choose the appropriate render*()function for the content which needed to be send to the client side
+- Access input values from the input object via their name, e.g. input$var
