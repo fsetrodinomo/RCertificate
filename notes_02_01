@@ -1,0 +1,11 @@
+shiny app -> single file use shinyapp(snippet)
+
+Disadvantages single file app:
+  - Apps quickly become unwiedly and difficult to manage
+  - It's important to keep mental seperation between what exists in the UI and server components of the app(seperations of concerns,cs)
+  - There can be issues in deploying Shiny apps that have been developed in a single file
+
+NOTE:
+- Single app are ONLY useful for small examples
+____________________________
+Split-file app
