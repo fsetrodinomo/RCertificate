@@ -10,7 +10,7 @@ countries_sf <- countries110 %>%
 function(input, output, session) {
   
   
-  output$highlighted_world_map <- renderLeaflet({
+  output$highlighted_world_map_1 <- renderLeaflet({
     countries_sf %>%
       leaflet() %>%
       addPolygons(
@@ -21,7 +21,7 @@ function(input, output, session) {
       ) %>%
       addPolygons(
         data = countries_sf %>%
-          filter(name == input$selected_country),
+          filter(name == input$selected_country_1),
         fillColor = "red",
         fillOpacity = 1,
         weight = 1,
@@ -30,5 +30,27 @@ function(input, output, session) {
       leaflet.extras::setMapWidgetStyle(style = list(background = "#0ca4ff"))
     
   })
+  output$highlighted_world_map_2 <- renderLeaflet({
+    countries_sf %>%
+      leaflet() %>%
+      addPolygons(
+        fillColor = "grey",
+        fillOpacity = 1,
+        weight = 1,
+        color = "black"
+      ) %>%
+      addPolygons(
+        data = countries_sf %>%
+          filter(name == input$selected_country_2),
+        fillColor = "red",
+        fillOpacity = 1,
+        weight = 1,
+        color = "black"
+      ) %>%
+      leaflet.extras::setMapWidgetStyle(style = list(background = "#0ca4ff"))
+    
+  }) 
   
 }
+
+
