@@ -1,0 +1,23 @@
+## render* and *output function pairs
+To display content from the server.R file -> ui.R
+must use a pair of render* and *Ouput functions
+
+renderplot and plotoutput
+- Base R plots and ggplot2 charts are rendered with the same functions
+- @server.R file -> renderPlot
+- @ui.R  -> plotOutput
+- Modify size of output chart in plotOutput
+
+rendertext and textoutput
+- Display small text in only one style -> renderText,textOutput
+- @server.R -> renderText
+- @ui.R -> textOutput
+- Complexs cases? renderUI/uiOutput
+
+All htmlwidgets featured on |HTMLwidgets.org| can easily be displayed in shinyapps
+
+Updating UI elements server-side required for many data-driven apps.
+Why?
+- Populate pull-down menus with specific values from dataset
+- Interdependent controls, e.g.: filtering by continent
+- Buiild reusable UI elements with Shiny modules

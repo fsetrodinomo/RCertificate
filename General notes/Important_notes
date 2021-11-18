@@ -1,0 +1,2 @@
+-All htmlwidgets featured on |HTMLwidgets.org| can easily be displayed in shinyapps e.g. leaflet::output
+- Updating UI elements server-side required for many data-driven apps.
