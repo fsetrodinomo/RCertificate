@@ -9,6 +9,17 @@ countries_sf <- countries110 %>%
 
 function(input, output, session) {
   
+  observeEvent(input$selected_country_1,{
+    updateSelectInput(session,
+                      "selected_country_2",
+                      selected = input$selected_country_1)
+  })
+  
+  observeEvent(input$selected_country_2,{
+    updateSelectInput(session,
+                      "selected_country_1",
+                      selected = input$selected_country_2)
+  })
   
   output$highlighted_world_map_1 <- renderLeaflet({
     countries_sf %>%
@@ -52,5 +63,3 @@ function(input, output, session) {
   }) 
   
 }
-
-
