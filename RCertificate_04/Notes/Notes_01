@@ -1,0 +1,21 @@
+ 
+ 1. Static table
+ - Controlled exclusively by external controls
+ - Designed to be printed
+ 
+ 2. Interactive tables
+ - Tables incorporate interactive components themselves
+ 
+
+ 
+ # color @ place of cursor & NA color
+ hover = TRUE,
+ na = "missing"
+ 
+ #modify dataset (error nested elements)
+ mutate_if(is.list,list(~map_chr(., ~paste(.x,collapse="<br>"))))
+ 
+ #table 
+   sanitize.text.function = identity
+   
+    
