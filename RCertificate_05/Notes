@@ -1,0 +1,33 @@
+Data and R environmental variables
+- Some R packages store API
+tokens as R environmental variables
+- R environmental variables are stored
+in a .Renviron file
+- By default, variables are always stored
+in the .Renviron file in home folder
+NOT project directory
+- Check packages to know if use
+.Renviron or .httr-auth
+
+
+.Renviron
+
+Package splelunking
+- check function: create_token or pkg_auth
+- Check the docs for a mention of .Renviron
+
+Expirement with the package
+- Use package and see if it creates
+.httr-oauth file
+- No .httr-oauth file? use package
+
+Variables and shiny apps:
+1. use rstudio projects
+2. create .gitignore and .Renviron
+NOTE! Do step 1 and 2 or else API credentials can be stolen easily
+3. Create a new .Renviron variable in your
+project directory
+
+Rules .renviron file
+- Use snake_Case for variables and quote values e.g.
+ PACKAGE_CONSUMER_SECRET="value"

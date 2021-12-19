@@ -1,0 +1,12 @@
+
+  observeEvent(c(input$selected_continent),
+               {
+                 countries_and_continents <- countries_and_continents %>%
+                   filter(continent == input$selected_continent) %>%
+                   pull(country)
+                 
+                 updateSelectInput(session,
+                                   "selected_country",
+                                   choices = countries_in_continents)
+               })
+               
