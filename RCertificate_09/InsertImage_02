@@ -1,0 +1,6 @@
+server.R
+use function renderImage
+
+make sure the images folder has been moved
+to the www folder.
+Update path @the renderImage function.

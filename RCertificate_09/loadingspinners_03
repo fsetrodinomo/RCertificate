@@ -1,0 +1,4 @@
+ui.R
+library("shinycustomloader")
+before@plotoutput:
+withLoader(plotoutput )
