@@ -1,0 +1,9 @@
+Situation: error: non-numeric argument to binary operator
+
+server.r
+try different places to print e.g. :
+print (input$exponent)
+check the console to make sure what happend 
+change input -> as.integer(at curve defining)
+
+ 

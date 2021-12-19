@@ -1,0 +1,28 @@
+1. Debugging R code
+- columns in a dataset are incorrectly formatted
+- input variables are incorrectly formatted
+- reactive variables updating in the wrong order or are not being updated at all
+
+debugging steps:
+  . use print() to send variables/data to the console
+  . use shinyjs::runcodeUI() & shinyjs::runcodeServer() to interactively explore R variables in your shiny app
+  . use shiny::reactlog for issues with reactivity
+  
+2. Debugging web content
+-content overlapping with other pages elements
+-htmlwidgets not displaying data as expected, especially misbehaving toolstips
+
+debugging steps:
+  . browsers inspector
+  . use shiny::reactlog to send js messages to the R console consider using along side runcodeUI() and runcodeServer()
+  
+3. Debugging deploy issuess
+- App fails to load
+
+debugging steps
+  . check appropriate packages loaded
+  . file paths MUST be relative to Shiny directory
+  . include all code in the server or use:
+      source("data-processing.R",local=TRUE)
+  . check different time zones
+  . Using api's ? Ensure tokens are sent to the server

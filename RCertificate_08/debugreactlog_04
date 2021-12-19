@@ -1,0 +1,13 @@
+Reactlog 
+
+console:
+options("shiny.reactlog"=True)
+
+//run r shiny app
+// open in browser
+click on update of histogram
+change mean
+click on update 
+
+//press command f3[CMD+F3]
+check reactlog

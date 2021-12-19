@@ -1,0 +1,18 @@
+Debug with Shinyjs::runcodeUI
+Situation : error numeric aragument to binary operator
+
+ui.r
+library("shinyjs")
+//at fluidpage
+useShinyjs(),
+  runcodeUI(type = "text")
+  
+server.r
+function(input,output,session) {
+runcodeServer()
+
+
+@textbox :
+print(input$exponent)
+//click on run
+//check console
