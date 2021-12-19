@@ -1,0 +1,9 @@
+Applying custom CSS to shiny apps
+- CSS and JS to subfolder called WWW
+
+ui.r
+//select selectIput and copied into a div @fluidpage
+style = "position.relative;z-index=1000"
+
+@navbarpage
+theme = "//insert custom CSS",
