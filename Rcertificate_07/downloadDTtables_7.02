@@ -1,0 +1,14 @@
+server.R
+ output$bechdel_ratings_table <- renderDT({
+    bechdel_ratings_2010s %>%
+      datatable(colnames = c(
+        "Movie Title",
+        "Year",
+        "Profitability",
+        "IMDB Rating"
+      ),
+      extensions = "Buttons",
+      options = list(
+        buttons = c("excel","pdf"),
+        dom="Bftip"
+      ))

@@ -1,0 +1,26 @@
+- use downloadButton in the ui.R
+- use downloadHandler in the server.R
+
+
+
+ui.R
+
+ downloadButton("download_bechdel_ratings",
+                     label="Download data"),
+      tableOutput("bechdel_ratings_table")
+______________________________
+
+Server.R
+
+function(input, output, session) {
+  
+  output$download_bechdel_ratings_table<-downloadHandler(
+    filename =function(){
+    paste0(Sys.Date(),"_bechdel-ratings.csv")
+    },
+    content = function(file){
+                
+                bechdel_ratings_2010s %>%
+                write_csv(file)
+    }
+  )

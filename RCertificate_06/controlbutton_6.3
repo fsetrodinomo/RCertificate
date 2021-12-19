@@ -1,0 +1,26 @@
+ui.R
+@fluidpage section
+   actionButton("update_chart",label="update chart", width="100%"),
+    plotOutput("wdi_indicator_chart")
+  
+    
+server.r
+@updateselectInput
+ output$wdi_indicator_chart <-
+ renderPlot({
+    print(input$update_chart)
+    
+    if(input$update_chart ==0){
+    return()
+    }
+    
+     
+    selected_indicator_name <- indicators %>%
+      filter(indicator_code == isolate (input$selected_indicator)) %>%
+      pull(indicator_name)v
+      
+       wdi_data %>%
+      filter(
+        country == isolate( input$selected_country
+      )
+            filter(indicator == isolate( input$selected_indicator)) %>%
