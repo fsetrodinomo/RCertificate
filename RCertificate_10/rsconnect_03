@@ -1,0 +1,5 @@
+Managing shiny apps with rsconnect
+library("rsconnect")
+accounts()  //shows in console the accounts
+showLogs(account = "",
+         appname " ")  //shows a log of the app
